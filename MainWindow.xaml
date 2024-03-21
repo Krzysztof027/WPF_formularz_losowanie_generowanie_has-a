@@ -1,0 +1,65 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Dodaj pracownika 000000000" Height="450" Width="800">
+    <Grid  Background="#B0C4DE">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <GroupBox Header="Generowanie hasła" Grid.Column="1"
+                 Margin="30">
+            <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                    <Label>Ile znaków</Label>
+                    <TextBox x:Name="ile_znakow"
+                        Width="200"></TextBox>
+            </StackPanel>
+                <CheckBox x:Name="Litery_chcb" IsChecked="True" Margin="15" >Duże i małe litery</CheckBox>
+                <CheckBox x:Name="Znaki_chkb" Margin="15">Duże litery</CheckBox>
+                <CheckBox x:Name="Cyfry_chcb" Margin="15">Cyfry</CheckBox>
+                <Button Width="100"
+                        Background="#4682B4" 
+                        Foreground="White"
+                        Click="button_Click">Generuj hasło</Button>
+            </StackPanel>
+            
+        </GroupBox>
+        
+        <GroupBox 
+            Header="Dane pracownika" Margin="30">
+
+            <UniformGrid Columns="2">
+                <TextBlock>Imię</TextBlock>
+                <TextBox Margin="25" x:Name="imie_TextBox"></TextBox>
+                <TextBlock>Nazwisko</TextBlock>
+                <TextBox Margin="25" x:Name="nazwisko_TextBox"></TextBox>
+                <TextBlock>Stanowisko</TextBlock>
+                <ComboBox Margin="30,20,30,20" x:Name="stanowisko_Combobox">
+                    <ComboBoxItem>Kierownik</ComboBoxItem>
+                    <ComboBoxItem>Starszy programista</ComboBoxItem>
+                    <ComboBoxItem>Młodszy programista</ComboBoxItem>
+                    <ComboBoxItem>Tester</ComboBoxItem>
+                </ComboBox>
+            </UniformGrid>
+        </GroupBox>
+        <Button Grid.Row="1" 
+                Grid.ColumnSpan="2"
+                Margin="50" Background="#4682B4"
+                Foreground="White"
+                Click="Button_Click_1">Zatwierdź</Button>
+        <!--proporcjonalnie - * -->
+        <!--automatycznie - auto -->
+    </Grid>
+</Window>
